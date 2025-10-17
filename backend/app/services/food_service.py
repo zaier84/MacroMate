@@ -8,7 +8,12 @@ logger = logging.getLogger(__name__)
 class FoodAPIClient:
     def __init__(self):
         self.provider = getattr(settings, "FOOD_API_PROVIDER", "usda").lower()
-        self.usda_key = getattr(settings, "USDA_API_KEY", None)
+        key = getattr(settings, "USDA_API_KEY", None)
+
+        if key is not None and hasattr(key, "get_secret_value"):
+            key = key.get_secret_value()
+
+        self.usda_key = key
         if self.provider == "usda" and not self.usda_key:
             logger.warning("USDA_API_KEY not set in settings - search will fail for USDA provider")
 
@@ -31,7 +36,7 @@ class FoodAPIClient:
             "pageNumber": page,
             "pageSize": page_size,
         }
-        resp = requests.post(url, json=payload, timeout=10)
+        resp = requests.post(url, json=payload, timeout=20)
         resp.raise_for_status()
         data = resp.json()
         results = []

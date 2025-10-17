@@ -1,8 +1,10 @@
 from fastapi import Depends
 from sqlalchemy.orm import Session
 from app.core.database import get_db
+from app.services.dashboard_service import DashboardService
 from app.services.food_service import FoodAPIClient
 from app.services.food_log_service import FoodLogService
+from app.services.meal_service import MealService
 from app.services.nutrition_service import NutritionService
 from app.services.onboarding_service import OnboardingService
 from app.services.user_service import UserService
@@ -36,13 +38,22 @@ def get_weight_service(db: Session = Depends(get_db)) -> WeightService:
 def get_workout_service(db: Session = Depends(get_db)) -> WorkoutService:
     return WorkoutService(db)
 
-# __all__ = ["get_weight_service", "Principal", "get_current_user", "get_user_service", "get_onboarding_service", "get_db"]
+def get_dashboard_service(db: Session = Depends(get_db)) -> DashboardService:
+    return DashboardService(db)
+
+def get_meal_service(db: Session = Depends(get_db)) -> MealService:
+    return MealService(db)
+
 __all__ = [
     "get_user_service",
     "get_onboarding_service",
     "get_nutrition_service",
+    "get_food_service",
     "get_food_log_service",
     "get_weight_service",
+    "get_workout_service",
+    "get_dashboard_service",
+    "get_meal_service",
     "get_db",
     "Principal",
     "get_current_user",

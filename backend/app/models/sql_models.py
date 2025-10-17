@@ -114,3 +114,35 @@ class ExerciseEntry(Base):
     def __repr__(self):
         return f"<ExerciseEntry(entry_id='{self.entry_id}', exercise_name='{self.exercise_name}')>"
 
+class Recipe(Base):
+    __tablename__ = "recipes"
+
+    recipe_id: Mapped[str] = mapped_column(String(36), primary_key=True, index=True)
+    user_id: Mapped[str] = mapped_column(String(128), nullable=False, index=True)  # owner
+    title: Mapped[str] = mapped_column(String(255), nullable=False)
+    description: Mapped[str | None] = mapped_column(String(1024), nullable=True)
+    servings: Mapped[float] = mapped_column(Float, nullable=False, default=1.0)
+    # ingredients: list of {food_api_id?, name, quantity, unit, optional nutrition override (calories, protein_g, carbs_g, fats_g), raw}
+    ingredients: Mapped[dict | list | None] = mapped_column(JSON, nullable=False)
+    # cached nutrition for whole recipe (and per_serving can be derived)
+    nutrition: Mapped[dict | None] = mapped_column(JSON, nullable=True)
+    created_at: Mapped[dt.datetime] = mapped_column(TIMESTAMP, server_default=func.now())
+    updated_at: Mapped[dt.datetime] = mapped_column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
+
+    def __repr__(self):
+        return f"<Recipe(recipe_id='{self.recipe_id}', title='{self.title}')>"
+
+class MealPlan(Base):
+    __tablename__ = "meal_plans"
+
+    plan_id: Mapped[str] = mapped_column(String(36), primary_key=True, index=True)
+    user_id: Mapped[str] = mapped_column(String(128), nullable=False, index=True)
+    start_date: Mapped[dt.date] = mapped_column(Date, nullable=False, index=True)
+    end_date: Mapped[dt.date] = mapped_column(Date, nullable=False, index=True)
+    # days: mapping from ISO date -> list of meals: [{meal_type, recipe_id?, items: [...], nutrition: {...}}]
+    days: Mapped[dict | None] = mapped_column(JSON, nullable=False)
+    created_at: Mapped[dt.datetime] = mapped_column(TIMESTAMP, server_default=func.now())
+    updated_at: Mapped[dt.datetime] = mapped_column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
+
+    def __repr__(self):
+        return f"<MealPlan(plan_id='{self.plan_id}', user_id='{self.user_id}', {self.start_date}..{self.end_date})>"

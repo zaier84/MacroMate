@@ -6,3 +6,7 @@ from .nutrition import router as nutrition_router
 from .foods import router as foods_router
 from .weights import router as weights_router
 from .workouts import router as workouts_router
+from .dashboard import router as dashboard_router
+from .recipes import router as recipes_router
+from .mealplans import router as mealplans_router
+from .health import router as health_router

@@ -8,7 +8,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 # --- MySQL (SQLAlchemy) Setup ---
-SQLALCHEMY_DATABASE_URL = settings.MYSQL_URL
+SQLALCHEMY_DATABASE_URL = settings.mysql_url()
 
 # Create the SQLAlchemy engine
 engine = create_engine(SQLALCHEMY_DATABASE_URL, pool_pre_ping=True)
@@ -56,3 +56,8 @@ def get_mongo_db() -> MongoDatabase:
         raise RuntimeError("MongoDB not connected. Call connect_to_mongo() first.")
     return mongo_db
 
+def get_mongo_client() -> MongoClient:
+    """Return the global client; ensure connect_to_mongo() was called."""
+    if mongo_client is None:
+        raise RuntimeError("MongoDB not connected. Call connect_to_mongo() first.")
+    return mongo_client
