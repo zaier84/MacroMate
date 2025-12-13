@@ -1,0 +1,24 @@
+# ------------------------------
+# Global / root files
+# ------------------------------
+
+# Environment files
+.env
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Editor swap files
+*.swp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Optional: global editor folders (if not committed)
+# Uncomment if you want to ignore VS Code/IntelliJ workspace settings at root
+.vscode/
+.idea/
+

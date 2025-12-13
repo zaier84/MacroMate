@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "738647177240",
+    "project_id": "macromate-d84f5",
+    "storage_bucket": "macromate-d84f5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738647177240:android:3908670c836b54f3c6ab6d",
+        "android_client_info": {
+          "package_name": "com.example.onboarding"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm3yca2drdGNHeIi6Ryd06tIaFxOkiWJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738647177240:android:0de6d2e5d84dde8fc6ab6d",
+        "android_client_info": {
+          "package_name": "com.macromate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm3yca2drdGNHeIi6Ryd06tIaFxOkiWJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
