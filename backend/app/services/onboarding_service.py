@@ -5,7 +5,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 import uuid
 
-from app.models.sql_models import User, UserOnboarding
+from app.models.sql_models import User, UserOnboarding, WeightEntry
 from app.services.user_service import publish_event
 from app.services.nutrition_utils import (
     calculate_calories_and_macros,
@@ -133,7 +133,6 @@ def _resolve_weekly_goal_from_goals(goals: dict) -> Tuple[float | None, dict]:
     meta["weekly_goal_value"] = weekly_goal_value
 
     return weekly_goal_value, meta
-
 
 class OnboardingService:
     def __init__(self, db: Session):
@@ -394,3 +393,140 @@ class OnboardingService:
             "weekly_goal": summary.get("weekly_goal", None),
             "weekly_goal_meta": meta if 'meta' in locals() else {}
         }
+
+    def get_onboarding_summary(self, user_id: str) -> dict[str, Any]:
+        """
+        Build the payload for the onboarding summary screen using:
+         - user.onboarding_summary (daily_calories, macro_targets, starting_weight_kg, weekly_goal, etc.)
+         - user.preferences (units, meal_preferences, diet_type, etc.)
+         - latest weight entry (if present) to use as current weight
+         - computed BMI and BMI category
+        """
+
+        user = self.db.query(User).filter(User.user_id == user_id).first()
+        if not user:
+            raise ValueError("User not found")
+
+        # ensure we have the freshest JSON mapping
+        summary = dict(user.onboarding_summary or {})
+        prefs = dict(user.preferences or {})
+
+        # determine current weight: prefer latest weight entry; else use starting_weight_kg
+        latest_weight_row = (
+            self.db.query(WeightEntry)
+            .filter(WeightEntry.user_id == user_id)
+            .order_by(WeightEntry.date.desc())
+            .first()
+        )
+        if latest_weight_row:
+            current_weight_kg = float(latest_weight_row.weight_kg)
+        else:
+            current_weight_kg = summary.get("starting_weight_kg")
+
+        # height: prefer user.height_cm, else summary height_cm
+        height_cm = getattr(user, "height_cm", None) or summary.get("height_cm") or summary.get("height")
+
+        # age: prefer summary age, else compute from dob if present
+        age = summary.get("age")
+        if age is None and getattr(user, "dob", None):
+            try:
+                dob = user.dob
+                today = datetime.utcnow().date()
+                if (dob):
+                    age = today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
+            except Exception:
+                age = None
+
+        # BMI calculation
+        bmi = None
+        bmi_category = None
+        try:
+            if current_weight_kg is not None and height_cm:
+                h_m = float(height_cm) / 100.0
+                if h_m > 0:
+                    bmi_val = float(current_weight_kg) / (h_m * h_m)
+                    bmi = round(bmi_val, 2)
+                    # BMI categories (simple)
+                    if bmi_val < 18.5:
+                        bmi_category = "Underweight"
+                    elif bmi_val < 25:
+                        bmi_category = "Normal"
+                    elif bmi_val < 30:
+                        bmi_category = "Overweight"
+                    else:
+                        bmi_category = "Obese"
+        except Exception:
+            bmi = None
+            bmi_category = None
+
+        # Goal / weekly goal
+        primary_goal = summary.get("goal_type") or summary.get("primary_goal") or user.goal
+        target_weight = summary.get("target_weight_kg") or None
+        activity_level = None
+        lifestyle = prefs.get("lifestyle") or {}
+        if isinstance(lifestyle, dict):
+            activity_level = lifestyle.get("activity_level")
+        if not activity_level:
+            activity_level = prefs.get("activity_level")
+
+        # Daily calories & macros
+        daily_calories = summary.get("daily_calories")
+        macro_targets = summary.get("macro_targets") or {}
+
+        # Tracking metrics simple heuristic: count enabled trackers
+        metrics_count = 0
+        # weight tracking considered "enabled" if we have >=1 weight entry OR starting_weight exists
+        if latest_weight_row or summary.get("starting_weight_kg"):
+            metrics_count += 1
+        if prefs.get("meals_per_day"):
+            metrics_count += 1
+        if prefs.get("diet_type") or prefs.get("exclude_foods"):
+            metrics_count += 1
+        # workout tracking: if workout sessions exist (quick count)
+        try:
+            # count rows in workout_sessions if table/model exists
+            from app.models.sql_models import WorkoutSession
+            ws_count = self.db.query(WorkoutSession).filter(WorkoutSession.user_id == user_id).count()
+            if ws_count:
+                metrics_count += 1
+        except Exception:
+            # ignore if workouts not present
+            pass
+
+        # units
+        units = prefs.get("units") or {}
+
+        # meals per day
+        meals_per_day = prefs.get("meals_per_day") or (prefs.get("meal_preferences") or {}).get("meals_per_day")
+
+        # diet type
+        diet_type = prefs.get("diet_type") or prefs.get("diet") or (prefs.get("dietary_preferences") or {}).get("diet_type")
+
+        result = {
+            "profile": {
+                "name": user.name or (summary.get("full_name") or summary.get("name")),
+                "age": age,
+                "current_weight_kg": float(current_weight_kg) if current_weight_kg is not None else None,
+                "height_cm": int(height_cm) if height_cm is not None else None,
+                "bmi": bmi,
+                "bmi_category": bmi_category,
+            },
+            "goal": {
+                "primary_goal": primary_goal,
+                "target_weight_kg": float(target_weight) if target_weight is not None else None,
+                "activity_level": activity_level,
+            },
+            "daily_targets": {
+                "daily_calories": int(daily_calories) if daily_calories is not None else None,
+                "macro_targets": macro_targets,
+            },
+            "tracking": {
+                "metrics_count": metrics_count,
+                "meals_per_day": meals_per_day,
+                "diet_type": diet_type,
+                "units": units,
+            },
+            "raw_onboarding_summary": summary,  # optional; useful for debugging / frontend flexibility
+        }
+
+        return result

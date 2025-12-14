@@ -1,0 +1,44 @@
+# ------------------------------
+# Python / FastAPI backend
+# ------------------------------
+.venv/
+__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.hypothesis/
+.tox/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Logs & env
+*.log
+.env
+
+# ------------------------------
+# Alembic migration cache
+# ------------------------------
+alembic/versions/__pycache__/
+alembic/versions/*.pyc
+alembic/__pycache__/
+
+# ------------------------------
+# Secret keys
+# ------------------------------
+serviceAccountKey.json
+
+# ------------------------------
+# Compiled shared objects / extensions
+# ------------------------------
+**/*.so
+**/*.dll
+**/*.dylib
+

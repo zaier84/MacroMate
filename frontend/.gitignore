@@ -1,0 +1,67 @@
+# ------------------------------
+# Miscellaneous
+# ------------------------------
+*.class
+*.log
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# ------------------------------
+# IDE / editor
+# ------------------------------
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+
+# ------------------------------
+# Flutter / Dart
+# ------------------------------
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+coverage/
+doc/api/
+generated_plugin_registrant.dart
+
+# iOS
+ios/Flutter/.last_build_id
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/ephemeral/
+ios/Pods/
+ios/.symlinks/
+ios/Podfile.lock
+
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+android/**/GeneratedPluginRegistrant.java
+android/app/key.jks
+
+# Firebase config files
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+
+# ------------------------------
+# Symbolication / obfuscation
+# ------------------------------
+app.*.symbols
+app.*.map.json
+
+# ------------------------------
+# Node / Firebase / web packages
+# ------------------------------
+node_modules/

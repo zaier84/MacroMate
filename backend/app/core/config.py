@@ -22,6 +22,7 @@ class Settings(BaseSettings):
     MYSQL_USER: str = "root"
     MYSQL_PASSWORD: SecretStr | None = None
     MYSQL_DB: str = "macromate_db"
+    MYSQL_URL: str = ""
     # allow full URL override
     DATABASE_URL: str | None = None
 
