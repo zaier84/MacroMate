@@ -66,29 +66,48 @@ class WorkoutService:
         self.db = db
 
     # ---------- helpers ----------
-    def _session_to_dict(self, s: WorkoutSession) -> dict[str, Any]:
+    # def _session_to_dict(self, s: WorkoutSession) -> dict[str, Any]:
+    #     return {
+    #         "session_id": s.session_id,
+    #         "user_id": s.user_id,
+    #         "date": s.date.isoformat(),
+    #         "name": s.name,
+    #         "notes": s.notes,
+    #         "created_at": s.created_at.isoformat() if s.created_at else None,
+    #         "updated_at": s.updated_at.isoformat() if s.updated_at else None,
+    #     }
+
+    def _session_to_dict(self, session: WorkoutSession) -> dict:
         return {
-            "session_id": s.session_id,
-            "user_id": s.user_id,
-            "date": s.date.isoformat(),
-            "name": s.name,
-            "notes": s.notes,
-            "created_at": s.created_at.isoformat() if s.created_at else None,
-            "updated_at": s.updated_at.isoformat() if s.updated_at else None,
+            "session_id": session.session_id,
+            "name": session.name,
+            "notes": session.notes,
+            "created_at": session.created_at.isoformat() if session.created_at else None,
+            "updated_at": session.updated_at.isoformat() if session.updated_at else None,
         }
 
-    def _exercise_to_dict(self, e: ExerciseEntry) -> dict[str, Any]:
+    # def _exercise_to_dict(self, e: ExerciseEntry) -> dict[str, Any]:
+    #     return {
+    #         "entry_id": e.entry_id,
+    #         "session_id": e.session_id,
+    #         "user_id": e.user_id,
+    #         "exercise_name": e.exercise_name,
+    #         "sets": e.sets or [],
+    #         "total_volume": float(e.total_volume) if e.total_volume is not None else None,
+    #         "notes": e.notes,
+    #         "created_at": e.created_at.isoformat() if e.created_at else None,
+    #         "updated_at": e.updated_at.isoformat() if e.updated_at else None,
+    #     }
+
+    def _exercise_to_dict(self, e: ExerciseEntry) -> dict:
         return {
             "entry_id": e.entry_id,
-            "session_id": e.session_id,
-            "user_id": e.user_id,
             "exercise_name": e.exercise_name,
             "sets": e.sets or [],
-            "total_volume": float(e.total_volume) if e.total_volume is not None else None,
+            "total_volume": e.total_volume,
             "notes": e.notes,
-            "created_at": e.created_at.isoformat() if e.created_at else None,
-            "updated_at": e.updated_at.isoformat() if e.updated_at else None,
         }
+
 
     # ---------- sessions CRUD ----------
     def create_session(self, user_id: str, session_date: date, name: str | None = None, notes: str | None = None) -> dict[str, Any]:
@@ -168,6 +187,182 @@ class WorkoutService:
                 self.db.rollback()
                 raise
         return self._exercise_to_dict(ex)
+
+    # def upsert_session_with_exercises(
+    #     self,
+    #     user_id: str,
+    #     session_date: date,
+    #     session_payload: dict | None,
+    #     exercises: list[dict],
+    # ):
+    #     session = (
+    #         self.db.query(WorkoutSession)
+    #         .filter(
+    #             WorkoutSession.user_id == user_id,
+    #             WorkoutSession.date == session_date,
+    #         )
+    #         .first()
+    #     )
+    #
+    #     if not session:
+    #         session = WorkoutSession(
+    #             session_id=uuid.uuid4().hex,
+    #             user_id=user_id,
+    #             date=session_date,
+    #             name=session_payload.get("name") if session_payload else None,
+    #             notes=session_payload.get("notes") if session_payload else None,
+    #         )
+    #         self.db.add(session)
+    #         self.db.flush()  # get session_id
+    #
+    #     created = []
+    #     for ex in exercises:
+    #         created.append(
+    #             self.add_exercise(
+    #                 session_id=session.session_id,
+    #                 user_id=user_id,
+    #                 payload=ex,
+    #                 commit=False,
+    #             )
+    #         )
+    #
+    #     self.db.commit()
+    #
+    #     return {
+    #         "date": session_date.isoformat(),
+    #         "session": self._session_to_dict(session),
+    #         "exercises": created,
+    #     }
+
+    def upsert_session_with_exercises(
+        self,
+        user_id: str,
+        session_date: date,
+        session_meta: Any | None,
+        exercises: list[dict],
+    ):
+        # 1️⃣ Try to find existing session for this date
+        session = (
+            self.db.query(WorkoutSession)
+            .filter(
+                WorkoutSession.user_id == user_id,
+                WorkoutSession.date == session_date,
+            )
+            .first()
+        )
+
+        # 2️⃣ Normalize session meta (supports Pydantic or dict)
+        name = None
+        notes = None
+        if session_meta:
+            name = getattr(session_meta, "name", None) or session_meta.get("name")
+            notes = getattr(session_meta, "notes", None) or session_meta.get("notes")
+
+        # 3️⃣ Create session if it doesn't exist
+        if not session:
+            session = WorkoutSession(
+                session_id=uuid.uuid4().hex,
+                user_id=user_id,
+                date=session_date,
+                name=name,
+                notes=notes,
+            )
+            self.db.add(session)
+            self.db.flush()  # ensure session_id exists
+        else:
+            # Optional: update name/notes if provided
+            if name is not None:
+                session.name = name
+            if notes is not None:
+                session.notes = notes
+
+        # 4️⃣ Add exercises (no auto-commit per exercise)
+        created_exercises = []
+        for ex in exercises:
+            created_exercises.append(
+                self.add_exercise(
+                    session_id=session.session_id,
+                    user_id=user_id,
+                    payload=ex,
+                    commit=False,
+                )
+            )
+
+        # 5️⃣ Single commit for atomicity
+        self.db.commit()
+
+        return {
+            "date": session_date.isoformat(),
+            "session": self._session_to_dict(session),
+            "exercises": created_exercises,
+        }
+
+    def add_exercises_bulk(
+        self,
+        session_id: str,
+        user_id: str,
+        exercises: list[dict[str, Any]]
+    ) -> list[dict[str, Any]]:
+        results = []
+
+        # validate session
+        s = self.db.query(WorkoutSession).filter(
+            WorkoutSession.session_id == session_id,
+            WorkoutSession.user_id == user_id
+        ).first()
+        if not s:
+            raise ValueError("session not found")
+
+        try:
+            for payload in exercises:
+                ex = self.add_exercise(
+                    session_id=session_id,
+                    user_id=user_id,
+                    payload=payload,
+                    commit=False
+                )
+                results.append(ex)
+
+            self.db.commit()
+
+        except Exception:
+            self.db.rollback()
+            raise
+
+        return results
+
+    def get_session_by_date(self, user_id: str, session_date: date) -> dict:
+        session = (
+            self.db.query(WorkoutSession)
+            .filter(
+                WorkoutSession.user_id == user_id,
+                WorkoutSession.date == session_date,
+            )
+            .first()
+        )
+
+        if not session:
+            return {
+                "date": session_date.isoformat(),
+                "session": None,
+                "exercises": [],
+            }
+
+        exercises = (
+            self.db.query(ExerciseEntry)
+            .filter(
+                ExerciseEntry.session_id == session.session_id,
+                ExerciseEntry.user_id == user_id,
+            )
+            .order_by(ExerciseEntry.created_at.asc())
+            .all()
+        )
+
+        return {
+            "date": session_date.isoformat(),
+            "session": self._session_to_dict(session),
+            "exercises": [self._exercise_to_dict(e) for e in exercises],
+        }
 
     def update_exercise(self, entry_id: str, user_id: str, payload: dict) -> dict[str, Any] | None:
         ex = self.db.query(ExerciseEntry).filter(ExerciseEntry.entry_id == entry_id, ExerciseEntry.user_id == user_id).first()

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:onboarding/screens/meal/manual_meal_screen.dart';
 import 'package:onboarding/screens/meal/snap_meal_screen.dart';
+import 'package:onboarding/screens/meal_plans/meal_plans_screen.dart';
 import 'package:onboarding/screens/water/water_log_screen.dart';
 import 'package:onboarding/screens/weight/weight_log_screen.dart';
+import 'package:onboarding/screens/workout/workout_screen.dart';
 
 class FloatingActionButtonMenu extends StatefulWidget {
   const FloatingActionButtonMenu({super.key});
@@ -28,6 +30,16 @@ class _FloatingActionButtonMenuState extends State<FloatingActionButtonMenu>
       'id': 'manual-meal',
       'label': 'Manual Meal',
       'icon': FontAwesomeIcons.pencil,
+    },
+    {
+      'id': 'workouts',
+      'label': 'Workouts',
+      'icon': FontAwesomeIcons.dumbbell,
+    },
+    {
+      'id': 'meal-plans',
+      'label': 'Meal Plans',
+      'icon': FontAwesomeIcons.utensils,
     },
     // {
     //   'id': 'cheat-meal-balance',
@@ -154,6 +166,18 @@ class _FloatingActionButtonMenuState extends State<FloatingActionButtonMenu>
     closeMenu();
 
     switch (id) {
+      case 'meal-plans':
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const MealPlansScreen()),
+        );
+        break;
+      case 'workouts':
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const WorkoutScreen()),
+        );
+        break;
       case 'manual-meal':
         Navigator.push(
           context,

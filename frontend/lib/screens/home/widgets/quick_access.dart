@@ -2,39 +2,69 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class QuickAccess extends StatelessWidget {
-  const QuickAccess({super.key});
+  final Map<String, dynamic> config;
+
+  const QuickAccess({super.key, required this.config});
 
   @override
   Widget build(BuildContext context) {
-    final quickActions = [
-      {
-        'id': 'cheat-meal-balance',
-        'title': 'Cheat Meal Balance',
-        'description': 'Balance your calories smartly',
-        'icon': FontAwesomeIcons.wandMagicSparkles,
-        'color': const Color(0xFFF6A63A), // warning color
-        'bgColor': const Color(0xFFFFF5E6),
-        'borderColor': const Color(0xFFF6A63A).withOpacity(0.2),
-      },
+    final bool showSnapMeal = config["showSnapMeal"] == true;
+    final bool showLogWater = config["showLogWater"] == true;
+
+    final List<Map<String, dynamic>> quickActions = [
+      if (showSnapMeal)
+        {
+          'id': 'snap-meal',
+          'title': 'Snap Meal',
+          'description': 'Scan your meal',
+          'icon': FontAwesomeIcons.camera,
+          'color': const Color(0xFF2563EB),
+          'bgColor': const Color(0xFFEFF6FF),
+          'borderColor': const Color(0xFF2563EB).withOpacity(0.2),
+        },
+      if (showLogWater)
+        {
+          'id': 'log-water',
+          'title': 'Log Water',
+          'description': 'Track hydration',
+          'icon': FontAwesomeIcons.droplet,
+          'color': const Color(0xFF0EA5E9),
+          'bgColor': const Color(0xFFE0F2FE),
+          'borderColor': const Color(0xFF0EA5E9).withOpacity(0.2),
+        },
+      // {
+      //   'id': 'cheat-meal-balance',
+      //   'title': 'Cheat Balance',
+      //   'description': 'Balance calories',
+      //   'icon': FontAwesomeIcons.wandMagicSparkles,
+      //   'color': const Color(0xFFF6A63A),
+      //   'bgColor': const Color(0xFFFFF5E6),
+      //   'borderColor': const Color(0xFFF6A63A).withOpacity(0.2),
+      // },
       {
         'id': 'ai-insights',
         'title': 'AI Insights',
-        'description': 'View health patterns',
+        'description': 'Health patterns',
         'icon': FontAwesomeIcons.arrowTrendUp,
-        'color': const Color(0xFF7C3AED), // brand primary
+        'color': const Color(0xFF7C3AED),
         'bgColor': const Color(0xFFF3E8FF),
         'borderColor': const Color(0xFF7C3AED).withOpacity(0.2),
       },
       {
         'id': 'workout-planner',
-        'title': 'Workout Planner',
-        'description': 'Generate AI workout',
+        'title': 'Workout',
+        'description': 'AI workouts',
         'icon': FontAwesomeIcons.bolt,
-        'color': const Color(0xFF22C55E), // success green
+        'color': const Color(0xFF22C55E),
         'bgColor': const Color(0xFFE9FCEB),
         'borderColor': const Color(0xFF22C55E).withOpacity(0.2),
       },
     ];
+
+    // 🛡️ If nothing is enabled, don’t render the card
+    if (quickActions.isEmpty) {
+      return const SizedBox.shrink();
+    }
 
     return Container(
       padding: const EdgeInsets.all(16),
@@ -75,7 +105,7 @@ class QuickAccess extends StatelessWidget {
               final action = quickActions[index];
               return GestureDetector(
                 onTap: () {
-                  // Replace with your route navigation logic
+                  // TODO: Add navigation later
                 },
                 child: Container(
                   padding: const EdgeInsets.all(12),

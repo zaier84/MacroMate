@@ -8,7 +8,7 @@ from app.services.food_log_service import FoodLogService
 from app.services.nutrition_service import NutritionService
 from app.services.weight_service import WeightService
 from app.services.workout_service import WorkoutService
-from app.models.sql_models import FoodEntry, WeightEntry, WorkoutSession, ExerciseEntry
+from app.models.sql_models import User, FoodEntry, WeightEntry, WorkoutSession, ExerciseEntry
 
 def _date_range(start: date, end: date) -> list[date]:
     days = (end - start).days
@@ -31,6 +31,302 @@ class DashboardService:
         self.nutrition_svc = NutritionService(db)
         self.weight_svc = WeightService(db)
         self.workout_svc = WorkoutService(db)
+
+    # def get_home_dashboard(self, user_id: str):
+    #     today = date.today()
+    #
+    #     user = self.db.query(User).filter(User.user_id == user_id).first()
+    #     if not user:
+    #         raise ValueError("User not found")
+    #
+    #     # ─────────────────────────────
+    #     # User info
+    #     # ─────────────────────────────
+    #     user_block = {
+    #         "name": user.name or "User",
+    #         "avatarUrl": None,  # frontend can fallback
+    #     }
+    #
+    #     # ─────────────────────────────
+    #     # Nutrition summary
+    #     # ─────────────────────────────
+    #     summary = user.onboarding_summary or {}
+    #     calorie_goal = summary.get("daily_calories", 0)
+    #     macro_targets = summary.get("macro_targets", {})
+    #
+    #     calories_consumed = (
+    #         self.db.query(func.sum(FoodEntry.calories))
+    #         .filter(
+    #             FoodEntry.user_id == user_id,
+    #             FoodEntry.date == today,
+    #         )
+    #         .scalar()
+    #     ) or 0
+    #
+    #     nutrition_block = {
+    #         "caloriesConsumed": int(calories_consumed),
+    #         "calorieGoal": int(calorie_goal),
+    #         "macros": {
+    #             "proteinPercent": macro_targets.get("protein_pct"),
+    #             "carbsPercent": macro_targets.get("carbs_pct"),
+    #             "fatPercent": macro_targets.get("fat_pct"),
+    #         },
+    #     }
+    #
+    #     # ─────────────────────────────
+    #     # Weight (latest)
+    #     # ─────────────────────────────
+    #     latest_weight = (
+    #         self.db.query(WeightEntry)
+    #         .filter(WeightEntry.user_id == user_id)
+    #         .order_by(WeightEntry.date.desc())
+    #         .first()
+    #     )
+    #
+    #     last_weight = (
+    #         self.db.query(WeightEntry)
+    #         .filter(
+    #             WeightEntry.user_id == user_id,
+    #             WeightEntry.date < (latest_weight.date if latest_weight else today),
+    #         )
+    #         .order_by(WeightEntry.date.desc())
+    #         .first()
+    #     )
+    #
+    #     weight_change = None
+    #     if latest_weight and last_weight:
+    #         weight_change = round(latest_weight.weight_kg - last_weight.weight_kg, 1)
+    #
+    #     # ─────────────────────────────
+    #     # Diary (today)
+    #     # ─────────────────────────────
+    #     meals = (
+    #         self.db.query(
+    #             FoodEntry.meal_type,
+    #             func.sum(FoodEntry.calories).label("calories"),
+    #             func.min(FoodEntry.date).label("time"),
+    #         )
+    #         .filter(
+    #             FoodEntry.user_id == user_id,
+    #             FoodEntry.date == today,
+    #         )
+    #         .group_by(FoodEntry.meal_type)
+    #         .all()
+    #     )
+    #
+    #     diary_meals = [
+    #         {
+    #             "id": f"meal_{i+1}",
+    #             "type": m.meal_type.title(),
+    #             "time": m.time.strftime("%H:%M") if m.time else None,
+    #             "calories": int(m.calories),
+    #         }
+    #         for i, m in enumerate(meals)
+    #     ]
+    #
+    #     # ─────────────────────────────
+    #     # Final response
+    #     # ─────────────────────────────
+    #     return {
+    #         "user": user_block,
+    #         "nutrition": nutrition_block,
+    #         "vitals": {
+    #             "weight": {
+    #                 "value": latest_weight.weight_kg if latest_weight else None,
+    #                 "unit": "kg",
+    #                 "change": weight_change,
+    #             },
+    #             "water": {
+    #                 "consumed": 0.0,
+    #                 "goal": 3.0,
+    #                 "unit": "L",
+    #             },
+    #             "steps": {
+    #                 "count": 0,
+    #                 "goal": 10000,
+    #             },
+    #         },
+    #         "todaysDiary": {
+    #             "totalCalories": int(calories_consumed),
+    #             "meals": diary_meals,
+    #         },
+    #         "bodyMetrics": {
+    #             "heightCm": user.height_cm,
+    #             "weightKg": latest_weight.weight_kg if latest_weight else None,
+    #         },
+    #         "quickAccess": {
+    #             "showSnapMeal": True,
+    #             "showLogWater": True,
+    #         },
+    #     }
+
+    def get_home_dashboard(self, user_id: str):
+        today = date.today()
+
+        user = self.db.query(User).filter(User.user_id == user_id).first()
+        if not user:
+            raise ValueError("User not found")
+
+        # ─────────────────────────────
+        # User info
+        # ─────────────────────────────
+        user_block = {
+            "name": user.name or "User",
+            "avatarUrl": None,
+        }
+
+        # ─────────────────────────────
+        # Targets (from onboarding)
+        # ─────────────────────────────
+        summary = user.onboarding_summary or {}
+        calorie_goal = int(summary.get("daily_calories", 0))
+        macro_targets = summary.get("macro_targets", {})
+
+        protein_pct = int(macro_targets.get("protein_pct", 0))
+        carbs_pct = int(macro_targets.get("carbs_pct", 0))
+        fat_pct = int(macro_targets.get("fat_pct", 0))
+
+        # ─────────────────────────────
+        # Consumed macros (ONE QUERY)
+        # ─────────────────────────────
+        calories_consumed, protein_g, carbs_g, fats_g = (
+            self.db.query(
+                func.coalesce(func.sum(FoodEntry.calories), 0),
+                func.coalesce(func.sum(FoodEntry.protein_g), 0),
+                func.coalesce(func.sum(FoodEntry.carbs_g), 0),
+                func.coalesce(func.sum(FoodEntry.fats_g), 0),
+            )
+            .filter(
+                FoodEntry.user_id == user_id,
+                FoodEntry.date == today,
+            )
+            .one()
+        )
+
+        # ─────────────────────────────
+        # Target macro grams
+        # ─────────────────────────────
+        target_protein_g = int((calorie_goal * protein_pct / 100) / 4) if calorie_goal else 0
+        target_carbs_g = int((calorie_goal * carbs_pct / 100) / 4) if calorie_goal else 0
+        target_fats_g = int((calorie_goal * fat_pct / 100) / 9) if calorie_goal else 0
+
+        # ─────────────────────────────
+        # Remaining macros
+        # ─────────────────────────────
+        remaining_macros = {
+            "proteinG": max(target_protein_g - protein_g, 0),
+            "carbsG": max(target_carbs_g - carbs_g, 0),
+            "fatG": max(target_fats_g - fats_g, 0),
+        }
+
+        nutrition_block = {
+            "caloriesConsumed": int(calories_consumed),
+            "calorieGoal": calorie_goal,
+
+            "macroTargets": {
+                "proteinPercent": protein_pct,
+                "carbsPercent": carbs_pct,
+                "fatPercent": fat_pct,
+            },
+
+            "macroConsumed": {
+                "proteinG": round(protein_g, 1),
+                "carbsG": round(carbs_g, 1),
+                "fatG": round(fats_g, 1),
+            },
+
+            "macroRemaining": remaining_macros,
+        }
+
+        # ─────────────────────────────
+        # Weight (latest)
+        # ─────────────────────────────
+        latest_weight = (
+            self.db.query(WeightEntry)
+            .filter(WeightEntry.user_id == user_id)
+            .order_by(WeightEntry.date.desc())
+            .first()
+        )
+
+        last_weight = (
+            self.db.query(WeightEntry)
+            .filter(
+                WeightEntry.user_id == user_id,
+                WeightEntry.date < (latest_weight.date if latest_weight else today),
+            )
+            .order_by(WeightEntry.date.desc())
+            .first()
+        )
+
+        weight_change = (
+            round(latest_weight.weight_kg - last_weight.weight_kg, 1)
+            if latest_weight and last_weight
+            else None
+        )
+
+        # ─────────────────────────────
+        # Diary (today)
+        # ─────────────────────────────
+        meals = (
+            self.db.query(
+                FoodEntry.meal_type,
+                func.sum(FoodEntry.calories).label("calories"),
+                func.min(FoodEntry.consumed_at).label("time"),
+            )
+            .filter(
+                FoodEntry.user_id == user_id,
+                FoodEntry.date == today,
+            )
+            .group_by(FoodEntry.meal_type)
+            .all()
+        )
+
+        diary_meals = [
+            {
+                "id": f"meal_{i+1}",
+                "type": m.meal_type.title(),
+                "time": m.time.strftime("%H:%M") if m.time else None,
+                "calories": int(m.calories),
+            }
+            for i, m in enumerate(meals)
+        ]
+
+        # ─────────────────────────────
+        # Final response
+        # ─────────────────────────────
+        return {
+            "user": user_block,
+            "nutrition": nutrition_block,
+            "vitals": {
+                "weight": {
+                    "value": latest_weight.weight_kg if latest_weight else None,
+                    "unit": "kg",
+                    "change": weight_change,
+                },
+                "water": {
+                    "consumed": 0.0,
+                    "goal": 3.0,
+                    "unit": "L",
+                },
+                "steps": {
+                    "count": 0,
+                    "goal": 10000,
+                },
+            },
+            "todaysDiary": {
+                "totalCalories": int(calories_consumed),
+                "meals": diary_meals,
+            },
+            "bodyMetrics": {
+                "heightCm": user.height_cm,
+                "weightKg": latest_weight.weight_kg if latest_weight else None,
+            },
+            "quickAccess": {
+                "showSnapMeal": True,
+                "showLogWater": True,
+            },
+        }
+
 
     # --------------------------
     # Daily dashboard

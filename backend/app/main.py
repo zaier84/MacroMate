@@ -18,8 +18,12 @@ from app.api.routes import(
     workouts_router,
     dashboard_router,
     recipes_router,
-    mealplans_router,
+    # mealplans_router,
     health_router,
+    progress_router,
+    diary_router,
+    meal_plans_router,
+    snap_meal_router
 )
 
 logger = logging.getLogger(__name__)
@@ -126,8 +130,12 @@ def create_app() -> FastAPI:
     app.include_router(prefix="/api", router=workouts_router)
     app.include_router(prefix="/api", router=dashboard_router)
     app.include_router(prefix="/api", router=recipes_router)
-    app.include_router(prefix="/api", router=mealplans_router)
+    # app.include_router(prefix="/api", router=mealplans_router)
     app.include_router(prefix="/api", router=health_router)
+    app.include_router(prefix="/api", router=progress_router)
+    app.include_router(prefix="/api", router=diary_router)
+    app.include_router(prefix="/api", router=meal_plans_router)
+    app.include_router(prefix="/api", router=snap_meal_router)
 
     return app
 

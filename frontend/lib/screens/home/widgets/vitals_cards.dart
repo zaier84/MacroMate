@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class VitalsCards extends StatelessWidget {
-  const VitalsCards({super.key});
+  final Map<String, dynamic> vitals;
+
+  const VitalsCards({super.key, required this.vitals});
 
   @override
   Widget build(BuildContext context) {
@@ -10,29 +12,27 @@ class VitalsCards extends StatelessWidget {
     final textColor = Theme.of(context).colorScheme.onSurface;
     final accent = Theme.of(context).colorScheme.primary;
 
-    final vitals = [
+    final water = vitals["water"];
+    final steps = vitals["steps"];
+    final weight = vitals["weight"];
+
+    final List<Map<String, dynamic>> items = [
       {
-        'icon': FontAwesomeIcons.heartPulse,
-        'label': 'Heart Rate',
-        'value': '72 bpm',
-        'color': Colors.pinkAccent,
+        'icon': FontAwesomeIcons.weightScale,
+        'label': 'Weight',
+        'value': weightValue(weight),
+        'color': Colors.orangeAccent,
       },
       {
         'icon': FontAwesomeIcons.droplet,
-        'label': 'Hydration',
-        'value': '1.8 L',
+        'label': 'Water',
+        'value': waterValue(water),
         'color': Colors.blueAccent,
       },
       {
-        'icon': FontAwesomeIcons.moon,
-        'label': 'Sleep',
-        'value': '7.5 hrs',
-        'color': Colors.purpleAccent,
-      },
-      {
-        'icon': FontAwesomeIcons.walking,
+        'icon': FontAwesomeIcons.personWalking,
         'label': 'Steps',
-        'value': '8,430',
+        'value': stepsValue(steps),
         'color': Colors.greenAccent,
       },
     ];
@@ -47,9 +47,10 @@ class VitalsCards extends StatelessWidget {
         mainAxisSpacing: 16,
         crossAxisSpacing: 16,
       ),
-      itemCount: vitals.length,
+      itemCount: items.length,
       itemBuilder: (context, index) {
-        final item = vitals[index];
+        final item = items[index];
+
         return AnimatedContainer(
           duration: const Duration(milliseconds: 350),
           curve: Curves.easeOut,
@@ -72,7 +73,6 @@ class VitalsCards extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     height: 44,
@@ -94,7 +94,7 @@ class VitalsCards extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          item['label'] as String,
+                          item['label'],
                           style: TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
@@ -103,7 +103,7 @@ class VitalsCards extends StatelessWidget {
                         ),
                         const SizedBox(height: 6),
                         Text(
-                          item['value'] as String,
+                          item['value'],
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -121,5 +121,22 @@ class VitalsCards extends StatelessWidget {
         );
       },
     );
+  }
+
+  // ───────────────── HELPERS ─────────────────
+
+  String weightValue(Map<String, dynamic>? weight) {
+    if (weight == null || weight["value"] == null) return "—";
+    return "${weight["value"]} ${weight["unit"]}";
+  }
+
+  String waterValue(Map<String, dynamic>? water) {
+    if (water == null) return "—";
+    return "${water["consumed"]}/${water["goal"]} ${water["unit"]}";
+  }
+
+  String stepsValue(Map<String, dynamic>? steps) {
+    if (steps == null || steps["count"] == null) return "—";
+    return "${steps["count"]}";
   }
 }

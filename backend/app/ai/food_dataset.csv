@@ -1,0 +1,511 @@
+name,meal_type,tags,ingredients,prep,Calories,Carbs (g),Protein (g),Fat (g)
+Chickpea Salad,"['Lunch', 'Dinner']","['Vegan', 'LowGI']","['chickpeas', 'onion']",Mix chickpeas and onion.,250,30,12,5.0
+Grilled Tofu,"['Lunch', 'Dinner']","['Vegan', 'LowGI']","['tofu', 'oil']",Grill tofu with spices.,200,6,18,9.0
+Oatmeal,['Breakfast'],"['Vegan', 'LowGI']","['oats', 'water']",Boil oats in water.,180,27,6,3.0
+Paneer Wrap,['Lunch'],['Vegetarian'],"['paneer', 'wrap']",Wrap grilled paneer.,300,20,15,18.0
+Fruit & Nuts,['Snack'],['Vegan'],"['banana', 'almonds']",Combine fruits and nuts.,150,20,4,8.0
+Lamb Curry,"['Lunch', 'Dinner']",['NonVeg'],"['lamb', 'spices']",Cook lamb with spices.,400,10,25,25.0
+Tuna Salad,['Lunch'],"['NonVeg', 'LowFat']","['tuna', 'lettuce']",Mix tuna and lettuce.,250,5,22,12.0
+Egg Bhurji,['Breakfast'],['NonVeg'],"['eggs', 'onion']",Scramble eggs with onion.,220,4,14,16.0
+Steamed Broccoli,['Dinner'],"['Vegan', 'LowFat', 'LowGI']",['broccoli'],Steam broccoli.,70,12,5,1.0
+Boiled Eggs,"['Breakfast', 'Snack']","['NonVeg', 'LowGI']",['eggs'],Boil eggs.,150,1,13,11.0
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,429,30,17,26.78
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,162,37,10,1.0
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,239,19,6,15.44
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,277,32,4,14.78
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,163,20,16,2.11
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,107,30,13,1.0
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,275,12,22,15.44
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,231,12,7,17.22
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,447,33,20,26.11
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,295,25,29,8.78
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,321,8,11,27.22
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,419,35,11,26.11
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,168,20,20,1.0
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,272,22,22,10.67
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,238,27,16,7.33
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,190,24,23,1.0
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,221,29,27,1.0
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,144,23,4,4.0
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,436,36,15,25.78
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,109,16,8,1.44
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,197,14,8,12.11
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,241,36,26,1.0
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,198,10,13,11.78
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,167,12,6,10.56
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,371,17,11,28.78
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,387,34,7,24.78
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,176,15,21,3.56
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,346,17,29,18.0
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,378,34,18,18.89
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,279,5,30,15.44
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,427,18,27,27.44
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,332,12,4,29.78
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,177,6,5,14.78
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,247,28,19,6.56
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,227,37,30,1.0
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,256,34,24,2.67
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,396,19,15,28.89
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,342,23,20,18.89
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,207,29,20,1.22
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,382,15,18,27.78
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,301,12,6,25.44
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,258,30,26,3.78
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,344,20,26,17.78
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,419,31,8,29.22
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,424,35,18,23.56
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,377,20,19,24.56
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,142,29,12,1.0
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,382,38,26,14.0
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,231,8,17,14.56
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,328,37,20,11.11
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,148,11,21,2.22
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,200,36,26,1.0
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,281,29,20,9.44
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,175,21,8,6.56
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,288,21,7,19.56
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,435,35,22,23.0
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,379,11,20,28.33
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,171,12,27,1.67
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,324,18,26,16.44
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,113,15,28,1.0
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,328,22,14,20.44
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,125,35,4,1.0
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,320,23,16,18.22
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,312,17,20,18.22
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,187,27,24,1.0
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,330,32,20,13.56
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,111,29,8,1.0
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,342,18,19,21.56
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,393,40,20,17.0
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,425,8,20,34.78
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,352,24,25,17.33
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,399,23,24,23.44
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,437,10,9,40.11
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,331,26,11,20.33
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,339,22,18,19.89
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,347,5,28,23.89
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,413,40,29,15.22
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,188,35,17,1.0
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,204,20,20,4.89
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,253,12,10,18.33
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,299,18,5,23.0
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,141,12,26,1.0
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,231,14,28,7.0
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,274,14,5,22.0
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,255,20,9,15.44
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,165,26,29,1.0
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,299,18,27,13.22
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,236,8,25,11.56
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,215,32,24,1.0
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,265,7,19,17.89
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,221,10,21,10.78
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,416,18,30,24.89
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,413,34,14,24.56
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,281,21,8,18.33
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,242,35,10,6.89
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,443,20,14,34.11
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,368,40,7,20.0
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,378,36,5,23.78
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,406,30,15,25.11
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,397,31,25,19.22
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,169,38,19,1.0
+Mixed Vegetable,['Dinner'],[],"['carrot', 'peas', 'beans']",Prepare mixed vegetable with basic ingredients.,450,11,29,32.22
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,143,22,26,1.0
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,183,8,30,3.44
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,120,17,24,1.0
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,102,18,9,1.0
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,207,21,8,10.11
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,120,38,6,1.0
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,110,24,6,1.0
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,239,16,18,11.44
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,339,21,27,16.33
+Mixed Vegetable,['Dinner'],[],"['carrot', 'peas', 'beans']",Prepare mixed vegetable with basic ingredients.,416,13,23,30.22
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,273,33,29,2.78
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,214,23,15,6.89
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,128,19,7,2.67
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,173,37,7,1.0
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,264,13,30,10.22
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,102,37,15,1.0
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,315,33,27,8.33
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,341,24,22,17.44
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,307,16,6,24.33
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,103,38,16,1.0
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,419,16,18,31.44
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,265,14,19,14.78
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,406,23,4,33.11
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,119,11,29,1.0
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,381,28,25,18.78
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,126,38,23,1.0
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,396,13,25,27.11
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,283,12,4,24.33
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,345,24,5,25.44
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,235,34,11,6.11
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,353,13,21,24.11
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,326,27,28,11.78
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,385,25,10,27.22
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,212,30,4,8.44
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,442,24,25,27.33
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,233,19,25,6.33
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,275,8,9,23.0
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,340,37,18,13.33
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,335,22,25,16.33
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,446,9,14,39.33
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,201,24,7,8.56
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,276,32,6,13.78
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,237,24,15,9.0
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,371,10,10,32.33
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,354,18,20,22.44
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,257,23,11,13.44
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,316,40,4,15.56
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,410,15,4,37.11
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,194,38,15,1.0
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,280,16,14,17.78
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,414,9,28,29.56
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,125,37,27,1.0
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,286,27,16,12.67
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,217,13,21,9.0
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,121,27,19,1.0
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,358,23,19,21.11
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,327,9,10,27.89
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,352,25,24,17.33
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,210,5,23,10.89
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,150,30,9,1.0
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,436,20,27,27.56
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,228,8,7,18.67
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,252,31,16,7.11
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,233,25,19,6.33
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,239,28,21,4.78
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,369,35,28,13.0
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,323,12,22,20.78
+Mixed Vegetable,['Dinner'],[],"['carrot', 'peas', 'beans']",Prepare mixed vegetable with basic ingredients.,356,15,6,30.22
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,129,15,13,1.89
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,375,8,12,32.78
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,277,37,26,2.78
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,296,31,25,8.0
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,374,12,5,34.0
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,387,30,29,16.78
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,360,11,30,21.78
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,286,22,14,15.78
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,318,15,22,18.89
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,227,31,10,7.0
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,195,12,8,12.78
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,249,21,15,11.67
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,399,6,7,38.56
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,369,9,7,33.89
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,446,14,29,30.44
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,239,21,26,5.67
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,364,30,14,20.89
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,412,22,29,23.11
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,356,10,21,25.78
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,205,28,8,6.78
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,384,21,30,20.0
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,160,14,15,4.89
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,342,17,11,25.56
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,396,37,21,18.22
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,336,5,9,31.11
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,235,14,9,15.89
+Mixed Vegetable,['Dinner'],[],"['carrot', 'peas', 'beans']",Prepare mixed vegetable with basic ingredients.,239,10,4,20.33
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,406,5,26,31.33
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,313,22,30,11.67
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,332,15,5,28.0
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,115,17,24,1.0
+Mixed Vegetable,['Dinner'],[],"['carrot', 'peas', 'beans']",Prepare mixed vegetable with basic ingredients.,172,22,21,1.0
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,353,23,29,16.11
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,441,8,7,42.33
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,207,25,20,3.0
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,247,36,11,6.56
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,244,13,26,9.78
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,341,27,25,14.78
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,200,8,29,5.78
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,336,9,8,29.78
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,359,9,5,33.67
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,138,40,28,1.0
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,363,25,26,17.67
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,334,24,21,17.11
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,430,18,11,34.89
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,292,32,10,13.78
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,252,26,25,5.33
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,182,23,25,1.0
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,259,28,6,13.67
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,433,29,4,33.44
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,375,31,11,23.0
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,170,5,22,6.89
+Mixed Vegetable,['Dinner'],[],"['carrot', 'peas', 'beans']",Prepare mixed vegetable with basic ingredients.,385,39,5,23.22
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,333,19,22,18.78
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,125,27,7,1.0
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,110,5,30,1.0
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,397,33,19,21.0
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,178,28,4,5.56
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,354,15,26,21.11
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,108,25,6,1.0
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,262,8,10,21.11
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,283,14,14,19.0
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,376,22,19,23.56
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,114,35,22,1.0
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,295,27,13,15.0
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,236,16,18,11.11
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,362,28,12,22.44
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,278,29,28,5.56
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,117,5,5,8.56
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,154,39,9,1.0
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,299,35,27,5.67
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,391,31,21,20.33
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,398,31,8,26.89
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,212,17,5,13.78
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,265,33,24,4.11
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,301,28,22,11.22
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,302,15,28,14.44
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,361,31,10,21.89
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,217,34,19,1.0
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,302,32,28,6.89
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,314,18,20,18.0
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,372,16,19,25.78
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,168,21,21,1.0
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,376,10,28,24.89
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,265,39,28,1.0
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,335,30,22,14.11
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,332,29,27,12.0
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,372,7,8,34.67
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,319,32,21,11.89
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,342,23,24,17.11
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,440,7,16,38.67
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,300,30,30,6.67
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,134,19,15,1.0
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,245,8,9,19.67
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,365,38,5,21.44
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,229,33,23,1.0
+Mixed Vegetable,['Dinner'],[],"['carrot', 'peas', 'beans']",Prepare mixed vegetable with basic ingredients.,193,39,27,1.0
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,363,13,10,30.11
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,440,38,21,22.67
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,276,28,18,10.22
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,323,34,12,15.44
+Mixed Vegetable,['Dinner'],[],"['carrot', 'peas', 'beans']",Prepare mixed vegetable with basic ingredients.,360,21,14,24.44
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,419,40,30,15.44
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,103,24,16,1.0
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,228,24,12,9.33
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,390,24,20,23.78
+Mixed Vegetable,['Dinner'],[],"['carrot', 'peas', 'beans']",Prepare mixed vegetable with basic ingredients.,110,29,17,1.0
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,237,8,20,13.89
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,277,21,29,8.56
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,254,39,9,6.89
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,390,24,13,26.89
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,418,13,18,32.67
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,379,8,9,34.56
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,288,5,10,25.33
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,402,32,8,26.89
+Mixed Vegetable,['Dinner'],[],"['carrot', 'peas', 'beans']",Prepare mixed vegetable with basic ingredients.,318,19,4,25.11
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,400,28,11,27.11
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,256,6,4,24.0
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,175,33,8,1.22
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,174,23,17,1.56
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,191,22,4,9.67
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,245,28,22,5.0
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,104,6,24,1.0
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,438,6,8,42.44
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,188,13,8,11.56
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,142,37,10,1.0
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,254,31,28,2.0
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,352,23,17,21.33
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,250,9,11,18.89
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,391,39,8,22.56
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,443,36,17,25.67
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,421,15,4,38.33
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,224,31,4,9.33
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,324,36,8,16.44
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,226,26,28,1.11
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,345,21,20,20.11
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,425,37,8,27.22
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,193,19,18,5.0
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,243,23,18,8.78
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,179,16,24,2.11
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,143,36,29,1.0
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,389,6,8,37.0
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,444,20,21,31.11
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,201,38,17,1.0
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,237,30,18,5.0
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,320,12,20,21.33
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,364,30,27,15.11
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,233,24,17,7.67
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,226,26,5,11.33
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,159,28,14,1.0
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,248,23,21,8.0
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,407,24,23,24.33
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,259,7,4,23.89
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,255,23,24,7.44
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,222,40,6,4.22
+Mixed Vegetable,['Dinner'],[],"['carrot', 'peas', 'beans']",Prepare mixed vegetable with basic ingredients.,204,27,19,2.22
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,128,27,21,1.0
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,191,40,9,1.0
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,169,35,6,1.0
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,284,28,15,12.44
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,226,37,8,5.11
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,326,22,8,22.89
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,186,29,5,5.56
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,347,34,6,20.78
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,303,40,10,11.44
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,248,7,11,19.56
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,189,21,10,7.22
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,187,38,18,1.0
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,248,30,5,12.0
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,215,26,24,1.67
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,396,17,23,26.22
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,343,38,9,17.22
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,374,16,24,23.78
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,207,39,26,1.0
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,130,5,19,3.78
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,324,6,11,28.44
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,354,15,25,21.56
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,363,34,18,17.22
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,371,36,9,21.22
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,434,18,24,29.56
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,450,28,28,25.11
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,364,30,27,15.11
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,324,20,8,23.56
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,393,26,16,25.0
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,369,13,22,25.44
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,411,25,21,25.22
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,220,7,20,12.44
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,409,20,27,24.56
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,382,17,8,31.33
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,182,5,17,10.44
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,177,17,28,1.0
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,235,35,12,5.22
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,288,23,30,8.44
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,380,14,25,24.89
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,261,38,7,9.0
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,247,36,6,8.78
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,311,16,6,24.78
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,206,30,10,5.11
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,130,7,17,3.78
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,368,21,23,21.33
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,438,11,20,34.89
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,311,31,26,9.22
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,170,23,8,5.11
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,191,10,18,8.78
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,108,37,17,1.0
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,135,31,24,1.0
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,400,24,21,24.44
+Mixed Vegetable,['Dinner'],[],"['carrot', 'peas', 'beans']",Prepare mixed vegetable with basic ingredients.,260,15,22,12.44
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,365,12,5,33.0
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,142,17,14,2.0
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,226,24,19,6.0
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,269,8,10,21.89
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,263,17,11,16.78
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,417,27,16,27.22
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,293,11,30,14.33
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,171,11,13,8.33
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,325,25,29,12.11
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,127,33,30,1.0
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,363,5,5,35.89
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,242,19,10,14.0
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,110,30,9,1.0
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,357,12,19,25.89
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,264,28,16,9.78
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,349,12,23,23.22
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,212,38,15,1.0
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,347,29,26,14.11
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,155,6,12,9.22
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,203,29,7,6.56
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,129,7,16,4.11
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,124,38,28,1.0
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,344,7,4,33.33
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,119,6,29,1.0
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,394,12,27,26.44
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,384,35,27,15.11
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,138,9,24,1.0
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,247,39,19,1.67
+Paneer Tikka,['Lunch'],['Vegetarian'],"['paneer', 'yogurt', 'spices']",Prepare paneer tikka with basic ingredients.,290,25,13,15.33
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,345,7,29,22.33
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,224,15,10,13.78
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,380,19,6,31.11
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,144,31,26,1.0
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,426,13,20,32.67
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,251,28,27,3.44
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,325,20,8,23.67
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,112,15,7,2.67
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,248,12,24,11.56
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,212,11,4,16.89
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,129,36,4,1.0
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,273,16,29,10.33
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,256,6,18,17.78
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,124,26,18,1.0
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,394,12,23,28.22
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,116,11,16,1.0
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,123,15,23,1.0
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,115,35,20,1.0
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,278,19,5,20.22
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,278,38,14,7.78
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,104,31,12,1.0
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,198,16,21,5.56
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,121,9,4,7.67
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,117,31,28,1.0
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,255,16,23,11.0
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,309,26,21,13.44
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,144,9,11,7.11
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,428,29,29,21.78
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,382,12,13,31.33
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,444,17,30,28.44
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,208,21,26,2.22
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,238,32,24,1.56
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,218,25,9,9.11
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,410,32,23,21.11
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,160,8,30,1.0
+Chia Pudding,['Breakfast'],"['Vegan', 'Vegetarian', 'LowFat']","['chia', 'almond milk']",Prepare chia pudding with basic ingredients.,394,14,7,34.44
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,423,37,12,25.22
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,163,19,13,3.89
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,283,12,8,22.56
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,110,37,11,1.0
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,270,17,29,9.56
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,170,9,24,4.22
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,304,19,27,13.33
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,440,23,12,33.33
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,404,17,11,32.44
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,197,35,23,1.0
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,176,24,4,7.11
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,431,8,7,41.22
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,272,40,13,6.67
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,262,30,22,6.0
+Fish Curry,['Dinner'],"['NonVeg', 'LowFat']","['fish', 'coconut milk', 'spices']",Prepare fish curry with basic ingredients.,194,21,17,4.67
+Veggie Burrito,['Lunch'],"['Vegan', 'Vegetarian', 'NonVeg', 'LowGI', 'LowFat', 'GlutenFree']","['beans', 'rice', 'tortilla']",Prepare veggie burrito with basic ingredients.,260,10,23,14.22
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,335,25,15,19.44
+Quinoa Bowl,['Lunch'],"['Vegan', 'GlutenFree']","['quinoa', 'veggies']",Prepare quinoa bowl with basic ingredients.,234,21,21,7.33
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,411,35,27,18.11
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,183,27,4,6.56
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,418,25,10,30.89
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,364,40,10,18.22
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,211,15,18,8.78
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,256,14,24,11.56
+Tofu Scramble,['Breakfast'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'spices']",Prepare tofu scramble with basic ingredients.,427,39,9,26.11
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,376,33,15,20.44
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,217,35,23,1.0
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,282,37,19,6.44
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,218,34,5,6.89
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,308,29,22,11.56
+Chickpea Curry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['chickpeas', 'onion', 'tomato']",Prepare chickpea curry with basic ingredients.,397,15,11,32.56
+Veg Sandwich,['Breakfast'],[],"['bread', 'lettuce', 'tomato']",Prepare veg sandwich with basic ingredients.,373,19,5,30.78
+Mixed Vegetable,['Dinner'],[],"['carrot', 'peas', 'beans']",Prepare mixed vegetable with basic ingredients.,301,37,8,13.44
+Carrot Sticks,['Snack'],['LowFat'],['carrots'],Prepare carrot sticks with basic ingredients.,427,40,12,24.33
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,415,32,9,27.89
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,300,34,29,5.33
+Turkey Wrap,['Lunch'],['NonVeg'],"['turkey', 'wrap', 'lettuce']",Prepare turkey wrap with basic ingredients.,219,20,27,3.44
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,151,19,15,1.67
+Oatmeal,['Breakfast'],"['Vegan', 'LowFat']","['oats', 'water']",Prepare oatmeal with basic ingredients.,259,16,22,11.89
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,364,22,21,21.33
+Smoothie,['Breakfast'],"['Vegan', 'LowFat']","['banana', 'berries', 'yogurt']",Prepare smoothie with basic ingredients.,356,32,15,18.67
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,370,34,10,21.56
+Lamb Stir Fry,['Dinner'],['NonVeg'],"['lamb', 'peppers', 'spices']",Prepare lamb stir fry with basic ingredients.,148,16,25,1.0
+Lentil Stew,['Lunch'],"['Vegetarian', 'LowGI']","['lentils', 'onion', 'tomato']",Prepare lentil stew with basic ingredients.,229,23,9,11.22
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,208,10,22,8.89
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,385,23,15,25.89
+Mixed Vegetable,['Dinner'],[],"['carrot', 'peas', 'beans']",Prepare mixed vegetable with basic ingredients.,339,14,5,29.22
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,435,36,9,28.33
+Nuts Mix,['Snack'],['LowGI'],"['almonds', 'cashews']",Prepare nuts mix with basic ingredients.,290,5,14,23.78
+Beef Steak,['Dinner'],['NonVeg'],"['beef', 'seasoning']",Prepare beef steak with basic ingredients.,229,8,6,19.22
+Boiled Eggs,['Breakfast'],"['Vegetarian', 'NonVeg', 'LowGI', 'GlutenFree']",['eggs'],Prepare boiled eggs with basic ingredients.,154,35,29,1.0
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,181,10,24,5.0
+Protein Bar,['Snack'],[],"['protein', 'nuts']",Prepare protein bar with basic ingredients.,152,5,11,9.78
+Grilled Chicken,['Lunch'],['NonVeg'],"['chicken', 'spices']",Prepare grilled chicken with basic ingredients.,443,5,30,33.67
+Tofu Stir Fry,['Dinner'],"['Vegan', 'LowGI', 'GlutenFree']","['tofu', 'veggies']",Prepare tofu stir fry with basic ingredients.,160,40,20,1.0
+Yogurt Cup,['Snack'],"['Vegetarian', 'LowGI']",['yogurt'],Prepare yogurt cup with basic ingredients.,228,27,28,1.0
+Fruit Salad,['Snack'],['Vegetarian'],"['apple', 'banana', 'grapes']",Prepare fruit salad with basic ingredients.,381,16,8,31.67

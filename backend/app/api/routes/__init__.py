@@ -10,3 +10,7 @@ from .dashboard import router as dashboard_router
 from .recipes import router as recipes_router
 from .mealplans import router as mealplans_router
 from .health import router as health_router
+from .progress import router as progress_router
+from .diary import router as diary_router
+from .meal_plans import router as meal_plans_router
+from .snap_meal import router as snap_meal_router

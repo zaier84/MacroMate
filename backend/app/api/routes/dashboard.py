@@ -20,6 +20,15 @@ def daily_dashboard(
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
+@router.get("/home")
+def get_home_dashboard(
+    user: Principal = Depends(get_current_user),
+    svc: DashboardService = Depends(get_dashboard_service),
+):
+    try:
+        return svc.get_home_dashboard(user.uid)
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
 
 @router.get("/weekly", summary="Weekly summary for last completed week (Mon-Sun) or specified week_start (YYYY-MM-DD = monday)")
 def weekly_dashboard(

@@ -26,6 +26,8 @@ class Settings(BaseSettings):
     # allow full URL override
     DATABASE_URL: str | None = None
 
+    GEMINI_API_KEY: str
+
     # Mongo
     MONGO_URI: str = "mongodb://localhost:27017/macromate_app_data"
     MONGO_DB_NAME: str = "macromate_app_data"

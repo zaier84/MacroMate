@@ -145,3 +145,28 @@ class MealPlan(Base):
 
     def __repr__(self):
         return f"<MealPlan(plan_id='{self.plan_id}', user_id='{self.user_id}', {self.start_date}..{self.end_date})>"
+
+# class MealPlan(Base):
+#     __tablename__ = "meal_plans"
+#
+#     plan_id: Mapped[str] = mapped_column(String(36), primary_key=True, index=True)
+#     user_id: Mapped[str] = mapped_column(String(128), nullable=False, index=True)
+#
+#     start_date: Mapped[dt.date] = mapped_column(Date, nullable=False, index=True)
+#     end_date: Mapped[dt.date] = mapped_column(Date, nullable=False, index=True)
+#
+#     # ISO date -> meals
+#     # "2026-01-02": {
+#     #   "breakfast": {...},
+#     #   "lunch": {...},
+#     #   "dinner": {...}
+#     # }
+#     days: Mapped[dict] = mapped_column(JSON, nullable=False)
+#
+#     meta: Mapped[dict | None] = mapped_column(JSON, nullable=True)  # calories, macros, model, version
+#
+#     created_at: Mapped[dt.datetime] = mapped_column(TIMESTAMP, server_default=func.now())
+#     updated_at: Mapped[dt.datetime] = mapped_column(
+#         TIMESTAMP, server_default=func.now(), onupdate=func.now()
+#     )
+#

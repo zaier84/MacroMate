@@ -3,8 +3,11 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from pydantic import BaseModel, Field, PositiveInt
 import datetime as dt
 
+from sqlalchemy.orm import Session
+
 from app.api.deps import get_workout_service
 from app.auth.deps import Principal, get_current_user
+from app.core.database import get_db
 from app.services.workout_service import WorkoutService
 
 router = APIRouter(prefix="/workouts", tags=["workouts"])
@@ -26,6 +29,56 @@ class SessionIn(BaseModel):
     name: str | None = None
     notes: str | None = None
 
+class SetSchema(BaseModel):
+    weight_kg: float = Field(..., ge=0)
+    reps: int = Field(..., gt=0)
+
+class ExerciseCreateSchema(BaseModel):
+    exercise_name: str
+    sets: list[SetSchema]
+    notes: str | None = None
+
+class BulkExercisesCreateSchema(BaseModel):
+    exercises: list[ExerciseCreateSchema]
+
+class SessionMetaIn(BaseModel):
+    name: str | None = None
+    notes: str | None = None
+
+class WorkoutByDateIn(BaseModel):
+    date: dt.date
+    session: SessionMetaIn | None = None
+    exercises: list[ExerciseIn]
+
+@router.post("/by-date", status_code=201)
+def upsert_workout_by_date(
+    payload: WorkoutByDateIn,
+    user: Principal = Depends(get_current_user),
+    svc: WorkoutService = Depends(get_workout_service),
+):
+    return svc.upsert_session_with_exercises(
+        user_id=user.uid,
+        session_date=payload.date,          # ✅ now a date object
+        session_meta=payload.session,
+        exercises=[e.model_dump() for e in payload.exercises],
+    )
+
+
+# @router.post("/by-date", status_code=201)
+# def upsert_workout_by_date(
+#     payload: dict,
+#     db: Session = Depends(get_db),
+#     user=Depends(get_current_user),
+# ):
+#     svc = WorkoutService(db)
+#
+#     return svc.upsert_session_with_exercises(
+#         user_id=user.uid,
+#         session_date=payload["date"],
+#         session_payload=payload.get("session"),
+#         exercises=payload.get("exercises", []),
+#     )
+
 # --- session endpoints ---
 @router.post("/sessions", status_code=status.HTTP_201_CREATED)
 def create_session(payload: SessionIn, user: Principal = Depends(get_current_user), svc: WorkoutService = Depends(get_workout_service)):
@@ -34,6 +87,15 @@ def create_session(payload: SessionIn, user: Principal = Depends(get_current_use
 @router.get("/sessions", status_code=200)
 def list_sessions(start: dt.date | None = Query(None), end: dt.date | None = Query(None), user: Principal = Depends(get_current_user), svc: WorkoutService = Depends(get_workout_service)):
     return svc.list_sessions(user.uid, start=start, end=end)
+
+@router.get("/sessions/by-date")
+def get_session_by_date(
+    date: dt.date = Query(...),
+    db: Session = Depends(get_db),
+    user=Depends(get_current_user),
+):
+    svc = WorkoutService(db)
+    return svc.get_session_by_date(user.uid, date)
 
 @router.get("/sessions/{session_id}", status_code=200)
 def get_session(session_id: str, user: Principal = Depends(get_current_user), svc: WorkoutService = Depends(get_workout_service)):
@@ -63,6 +125,38 @@ def add_exercise(session_id: str, payload: ExerciseIn, user: Principal = Depends
         return svc.add_exercise(session_id, user.uid, payload.dict())
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
+
+# @router.post("/sessions/{session_id}/exercises/bulk", status_code=201)
+# def add_exercise_bulk(session_id: str, payload: ExerciseIn, user: Principal = Depends(get_current_user), svc: WorkoutService = Depends(get_workout_service)):
+#     try:
+#         return svc.add_exercise(session_id, user.uid, payload.dict())
+#     except ValueError as e:
+#         raise HTTPException(status_code=400, detail=str(e))
+@router.post("/sessions/{session_id}/exercises/bulk", status_code=201)
+def add_exercises_bulk(
+    session_id: str,
+    payload: BulkExercisesCreateSchema,
+    db: Session = Depends(get_db),
+    user=Depends(get_current_user),
+):
+    svc = WorkoutService(db)
+
+    try:
+        return {
+            "session_id": session_id,
+            "exercises": svc.add_exercises_bulk(
+                session_id=session_id,
+                user_id=user.uid,
+                exercises=[e.model_dump() for e in payload.exercises],
+            )
+        }
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception:
+        raise HTTPException(
+            status_code=500,
+            detail="Failed to save workout exercises"
+        )
 
 @router.get("/sessions/{session_id}/exercises", status_code=200)
 def list_exercises(session_id: str, user: Principal = Depends(get_current_user), svc: WorkoutService = Depends(get_workout_service)):

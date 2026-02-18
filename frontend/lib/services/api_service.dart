@@ -17,7 +17,7 @@ class ApiService {
 
     return {
       "Authorization": "Bearer $idToken",
-      "Content-Type": "application/json",
+      // "Content-Type": "application/json",
       "Accept": "application/json",
     };
   }
@@ -30,12 +30,45 @@ class ApiService {
   Future<http.Response> get(String path) async {
     final headers = await _defaultHeaders();
     final url = _buildUri(path);
-    return await http.get(url, headers: headers);
+    // return await http.get(url, headers: headers);
+    return await http.get(
+      url,
+      headers: {...headers, "Content-Type": "application/json"},
+    );
   }
 
   Future<http.Response> post(String path, String body) async {
     final headers = await _defaultHeaders();
     final url = _buildUri(path);
-    return await http.post(url, headers: headers, body: body);
+    // return await http.post(url, headers: headers, body: body);
+    return await http.post(
+      url,
+      headers: {...headers, "Content-Type": "application/json"},
+      body: body,
+    );
+  }
+
+  Future<http.StreamedResponse> postMultipart(
+    String path, {
+    required Map<String, String> fields,
+    List<http.MultipartFile>? files,
+  }) async {
+    final headers = await _defaultHeaders();
+    final url = _buildUri(path);
+
+    final request = http.MultipartRequest("POST", url);
+
+    // Add auth headers (DO NOT set content-type manually)
+    request.headers.addAll(headers);
+
+    // Add form fields
+    request.fields.addAll(fields);
+
+    // Add files if any
+    if (files != null && files.isNotEmpty) {
+      request.files.addAll(files);
+    }
+
+    return await request.send();
   }
 }

@@ -2,55 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class TodaysDiary extends StatelessWidget {
-  const TodaysDiary({super.key});
+  final Map<String, dynamic> diary;
+
+  const TodaysDiary({super.key, required this.diary});
 
   @override
   Widget build(BuildContext context) {
-    final diaryEntries = [
-      DiaryEntry(
-        id: "1",
+    final List meals = diary["meals"] ?? [];
+
+    final List<DiaryEntry> diaryEntries = meals.map<DiaryEntry>((meal) {
+      return DiaryEntry(
+        id: meal["id"],
         type: DiaryType.meal,
-        time: "8:30 AM",
-        title: "Breakfast",
-        subtitle: "Oatmeal with berries",
-        calories: 320,
-        icon: FontAwesomeIcons.coffee,
-      ),
-      DiaryEntry(
-        id: "2",
-        type: DiaryType.meal,
-        time: "1:15 PM",
-        title: "Lunch",
-        subtitle: "Grilled chicken salad",
-        calories: 450,
-        icon: FontAwesomeIcons.utensils,
-      ),
-      DiaryEntry(
-        id: "3",
-        type: DiaryType.meal,
-        time: "3:45 PM",
-        title: "Snack",
-        subtitle: "Apple with almond butter",
-        calories: 180,
-        icon: FontAwesomeIcons.apple,
-      ),
-      DiaryEntry(
-        id: "4",
-        type: DiaryType.workout,
-        time: "6:00 PM",
-        title: "Upper Body Workout",
-        subtitle: "45 min • Chest & Arms",
-        calories: 280,
-        icon: FontAwesomeIcons.dumbbell,
-      ),
-    ];
+        time: _formatTime(meal["time"]),
+        title: meal["type"],
+        subtitle: null,
+        calories: meal["calories"],
+        icon: _mealIcon(meal["type"]),
+      );
+    }).toList();
 
     final hasEntries = diaryEntries.isNotEmpty;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Header row
+        // Header
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4.0),
           child: Row(
@@ -61,23 +38,23 @@ class TodaysDiary extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
-                  color: Color(0xFF111827), // text-primary
+                  color: Color(0xFF111827),
                 ),
               ),
               if (hasEntries)
                 TextButton(
+                  onPressed: () {},
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
                     minimumSize: const Size(40, 20),
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   ),
-                  onPressed: () {},
                   child: const Text(
                     "View All",
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
-                      color: Color(0xFF4F46E5), // brand-primary
+                      color: Color(0xFF4F46E5),
                     ),
                   ),
                 ),
@@ -86,11 +63,11 @@ class TodaysDiary extends StatelessWidget {
         ),
         const SizedBox(height: 8),
 
-        // Container background
+        // Content
         Container(
           padding: const EdgeInsets.all(6),
           decoration: BoxDecoration(
-            color: const Color(0xFFFAFAFA), // neutral-50
+            color: const Color(0xFFFAFAFA),
             borderRadius: BorderRadius.circular(16),
           ),
           child: hasEntries
@@ -98,7 +75,8 @@ class TodaysDiary extends StatelessWidget {
                   children: [
                     for (final entry in diaryEntries) ...[
                       DiaryEntryCard(entry: entry),
-                      if (entry != diaryEntries.last) const SizedBox(height: 8),
+                      if (entry != diaryEntries.last)
+                        const SizedBox(height: 8),
                     ],
                   ],
                 )
@@ -107,11 +85,36 @@ class TodaysDiary extends StatelessWidget {
       ],
     );
   }
+
+  // ─────────────────────────────────────────────
+  // Helpers
+  // ─────────────────────────────────────────────
+
+  String _formatTime(String? time) {
+    if (time == null || time == "00:00") return "";
+    return time;
+  }
+
+  IconData _mealIcon(String type) {
+    switch (type.toLowerCase()) {
+      case "breakfast":
+        return FontAwesomeIcons.coffee;
+      case "lunch":
+        return FontAwesomeIcons.utensils;
+      case "dinner":
+        return FontAwesomeIcons.bowlFood;
+      case "snack":
+        return FontAwesomeIcons.apple;
+      default:
+        return FontAwesomeIcons.utensils;
+    }
+  }
 }
 
 // ─────────────────────────────────────────────
 // Diary Entry Model
 // ─────────────────────────────────────────────
+
 enum DiaryType { meal, workout, weight, water }
 
 class DiaryEntry {
@@ -137,6 +140,7 @@ class DiaryEntry {
 // ─────────────────────────────────────────────
 // Diary Entry Card
 // ─────────────────────────────────────────────
+
 class DiaryEntryCard extends StatelessWidget {
   final DiaryEntry entry;
   const DiaryEntryCard({super.key, required this.entry});
@@ -144,13 +148,13 @@ class DiaryEntryCard extends StatelessWidget {
   Color _typeColor(DiaryType type) {
     switch (type) {
       case DiaryType.meal:
-        return const Color(0xFF4F46E5); // brand-primary
+        return const Color(0xFF4F46E5);
       case DiaryType.workout:
-        return const Color(0xFF16A34A); // success
+        return const Color(0xFF16A34A);
       case DiaryType.weight:
-        return const Color(0xFFFACC15); // warning
+        return const Color(0xFFFACC15);
       case DiaryType.water:
-        return const Color(0xFF9333EA); // brand-secondary
+        return const Color(0xFF9333EA);
     }
   }
 
@@ -165,7 +169,6 @@ class DiaryEntryCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // Icon Circle
           Container(
             width: 40,
             height: 40,
@@ -176,13 +179,10 @@ class DiaryEntryCard extends StatelessWidget {
             child: Icon(entry.icon, color: _typeColor(entry.type), size: 20),
           ),
           const SizedBox(width: 12),
-
-          // Text Column
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Title & Time
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -193,38 +193,26 @@ class DiaryEntryCard extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
-                          color: Color(0xFF111827), // text-primary
+                          color: Color(0xFF111827),
                         ),
                       ),
                     ),
-                    const SizedBox(width: 8),
                     Text(
                       entry.time,
                       style: const TextStyle(
                         fontSize: 13,
-                        color: Color(0xFF6B7280), // neutral-500
+                        color: Color(0xFF6B7280),
                       ),
                     ),
                   ],
                 ),
-                if (entry.subtitle != null) ...[
-                  const SizedBox(height: 2),
-                  Text(
-                    entry.subtitle!,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontSize: 13,
-                      color: Color(0xFF525252), // neutral-600
-                    ),
-                  ),
-                ],
                 if (entry.calories != null) ...[
                   const SizedBox(height: 4),
                   Text(
                     "${entry.calories} calories",
                     style: const TextStyle(
                       fontSize: 12,
-                      color: Color(0xFF9CA3AF), // neutral-500
+                      color: Color(0xFF9CA3AF),
                     ),
                   ),
                 ],
@@ -240,6 +228,7 @@ class DiaryEntryCard extends StatelessWidget {
 // ─────────────────────────────────────────────
 // Empty State
 // ─────────────────────────────────────────────
+
 class EmptyState extends StatelessWidget {
   const EmptyState({super.key});
 
@@ -248,7 +237,6 @@ class EmptyState extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             width: 64,
@@ -274,38 +262,12 @@ class EmptyState extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           const Text(
-            "Start logging your meals, workouts, and other activities to track your progress.",
+            "Start logging your meals to track your nutrition.",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 13,
               color: Color(0xFF6B7280),
               height: 1.4,
-            ),
-          ),
-          const SizedBox(height: 16),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [Color(0xFF4F46E5), Color(0xFF9333EA)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: const [
-                Icon(FontAwesomeIcons.plus, color: Colors.white, size: 16),
-                SizedBox(width: 6),
-                Text(
-                  "Add Entry",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
             ),
           ),
         ],

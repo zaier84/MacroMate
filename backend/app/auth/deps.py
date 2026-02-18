@@ -17,7 +17,8 @@ def get_current_user(authorization: str = Header(default="", alias="Authorizatio
 
     try:
         claims = verify_id_token(token)
-    except:
+    except Exception as e:
+        print(e)
         raise HTTPException(status_code=401, detail="Invalid or expired token")
 
     return Principal(claims)
